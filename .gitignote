@@ -1,0 +1,40 @@
+# .NET build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.nuget.cache
+*.log
+
+# VS Code settings
+.vscode/
+.vscode-test/
+
+# DevContainers
+.devcontainer/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+~$*
+
+# Lock files
+*.lock
+
+# Dependency directories
+node_modules/
+packages/
+
+# F# Interactive
+*.fsx~
