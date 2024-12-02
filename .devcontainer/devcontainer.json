@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-fsharp
 {
-	"name": "F# (.NET)",
+	"name": "Advent 2024",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -20,9 +20,7 @@
 				"terminal.integrated.defaultProfile.linux": "bash"
 			}
 		}
-	},
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/advent_2024,type=bind",
-	"workspaceFolder": "/workspace/advent_2024"
+	}
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.

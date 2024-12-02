@@ -43,11 +43,10 @@ let FindSimilitary filePath =
         |> List.map (fun target -> findSimilitaryScore target list2)
         |> List.sum
 
-    
+let runDay1 = 
+    let filePath = "./input/day1.txt"
+    let totalDifference = FindTotalDifference filePath
+    printfn "Total Differences: %d" totalDifference
 
-
-let totalDifference = FindTotalDifference "./input/day1.txt"
-printfn "Total Differences: %d" totalDifference
-
-let totalSimilarity = FindSimilitary "./input/day1.txt"
-printfn "Total Similarity: %d" totalSimilarity
+    let totalSimilarity = FindSimilitary filePath
+    printfn "Total Similarity: %d" totalSimilarity
