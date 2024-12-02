@@ -38,3 +38,5 @@ packages/
 
 # F# Interactive
 *.fsx~
+
+.fake
