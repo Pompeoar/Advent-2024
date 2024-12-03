@@ -15,9 +15,9 @@ let countOutOfRange min max numbers =
     |> Array.filter (fun (a, b) -> not (isWithinRange min max (a, b)))
     |> Array.length
 
-let isWithinTolerance numbers = 
-    let outOfRangeCount = countOutOfRange 0 3 numbers
-    outOfRangeCount <= 0
+let isWithinTolerance maxTolerance numbers = 
+    let outOfRangeCount = countOutOfRange 1 3 numbers
+    outOfRangeCount <= maxTolerance
 
 let getBadLevelCount compare numbers = 
     numbers
@@ -33,7 +33,7 @@ let isAscending = isOrdered (fun (a, b) -> a < b)
 let isDescending = isOrdered (fun (a, b) -> a > b) 
 
 let isSafeLevel maxTolerance numbers =
-    let withinTolerance = isWithinTolerance numbers
+    let withinTolerance = isWithinTolerance maxTolerance numbers
     (isAscending maxTolerance numbers && withinTolerance) || (isDescending maxTolerance numbers && withinTolerance)
 
 let isStrictSafeLevel = isSafeLevel 0
@@ -57,6 +57,8 @@ let sanityCheck () =
         printfn "Input: %A | Expected: %s | Result: %s" numbers description result
     )
 
+// Part 2 problem - need to refactor the tolerance to remove the first offending element and check if the list could still be within tolerance
+
 let runDay2 = 
     let data = File.ReadAllLines(path = "./input/day2.txt")
     let levels = data |> Array.map splitIntoSeparateNumbers
@@ -65,4 +67,3 @@ let runDay2 =
     printfn "Number of safe levels: %d" strictlySafeLevels
     printfn "Number of tolerable safe levels: %d"  tolerableSafeLevels
     sanityCheck()
-
