@@ -1,8 +1,6 @@
-﻿open System
-open Day1 
-
+﻿
 [<EntryPoint>]
 let main argv =
-    Day3.run
+    Day4.run
 
     0 
